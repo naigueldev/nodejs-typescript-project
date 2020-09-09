@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import ProductRouter from '@src/app/modules/Product/Router';
+import ProductRouter from '@modules/Product/Router';
 
 class Routes {
     constructor(public router = Router()) {
