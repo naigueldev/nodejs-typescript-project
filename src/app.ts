@@ -1,11 +1,11 @@
 import './util/module-alias';
 import express from 'express';
 import bodyParser from 'body-parser';
-import * as http from 'http';
+import { Server } from 'http';
 import router from './routes';
 
 export class SetupApplication {
-  private server?: http.Server;
+  private server?: Server;
 
   constructor(private port = 3000, public app = express()) { }
 
