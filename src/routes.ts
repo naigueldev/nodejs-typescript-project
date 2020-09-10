@@ -2,18 +2,12 @@ import { Router } from 'express';
 import ProductRouter from '@modules/Product/Router';
 
 class Routes {
-    constructor(public router = Router()) {
-        this.define();
-    }
+    static define(router: Router): Router {
+        router.use('/products', ProductRouter);
 
-    public define(): void {
-        this.router.use('/products', ProductRouter);
-    }
-
-    public getRouter(): Router {
-        return this.router;
+        return router;
     }
 }
 
 
-export default new Routes().getRouter();
+export default Routes.define(Router());
